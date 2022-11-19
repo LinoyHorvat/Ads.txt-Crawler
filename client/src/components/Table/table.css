@@ -1,0 +1,50 @@
+table {
+  /* min-width: 300px; */
+  width: 100%;
+  align-items: center;
+  /* border: 0.1px black solid; */
+  border-radius: 2px;
+}
+table tr td {
+  margin: 5px 2px;
+  padding: 10px;
+  width: 400px;
+}
+
+th {
+  text-align: left;
+  width: 90px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid lightgray;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px;
+}
+td {
+  max-width: 90px;
+  text-align: left;
+  border-bottom: 1px solid lightgray;
+}
+tr:hover {
+  background-color: var(--light-green);
+}
+.table-header:hover {
+  background-color: transparent;
+}
+.table-total {
+  text-align: center;
+  background-color: var(--light-green);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: default;
+}
+.table-total-props {
+  color: var(--blue);
+  font-weight: 700;
+}
+.table-domain {
+  width: 70%;
+}
+.btn {
+  cursor: pointer;
+}
