@@ -5,7 +5,8 @@ const axios = require("axios");
 const { performance } = require("perf_hooks");
 /**
  * @function dataArrangement
- * @param data returned from the getDomain function.
+ * This function is called by the getDomain function to arrange the data returned from the GET method.
+ * @param data
  * @return Array sorted by the number of times the domain appears
  */
 const dataArrangement = (data) => {
@@ -29,8 +30,7 @@ const dataArrangement = (data) => {
  * resultObj{
  *     parseTime: parseTime,
  *     parseErrors: parseErrors,
- *     data: result
- * }
+ *     data: result}
  */
 const getDomain = async (req, res) => {
   let { domain: searchDomain } = req.params;
