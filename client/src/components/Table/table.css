@@ -45,6 +45,10 @@ tr:hover {
 .btn {
   cursor: pointer;
 }
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
 
 @media screen and (max-width: 650px) {
   th.table-total {

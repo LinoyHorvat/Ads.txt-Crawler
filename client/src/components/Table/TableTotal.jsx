@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./table.css";
-import { CSVDownload } from "react-csv";
+import { CSVLink } from "react-csv";
 
 function TableTotal({
   searchDomain,
@@ -9,12 +9,6 @@ function TableTotal({
   parseErrors,
   res,
 }) {
-  const [download, setDownload] = useState(false);
-
-  const handleSetDownload = () => {
-    download ? setDownload(false) : setDownload(true);
-  };
-
   return (
     <div>
       <div>
@@ -38,12 +32,10 @@ function TableTotal({
                 <div className="table-total-props">{parseErrors}</div>
               </th>
               <th className="table-total">
-                <div
-                  className="table-total-props btn"
-                  onClick={(e) => handleSetDownload()}
-                >
-                  Download
-                  {download && <CSVDownload data={res} />}
+                <div className="table-total-props btn">
+                  <CSVLink data={res} headers={["Domain", "Count"]}>
+                    Download
+                  </CSVLink>
                 </div>
               </th>
             </tr>
