@@ -18,7 +18,7 @@ function App() {
 
   /**
    * @function handleSearch
-   * Cheek that the domain term is valid.
+   * Check that the domain term is valid.
    * Call the GET method for the given domain term.
    * setState to returned values
    */
