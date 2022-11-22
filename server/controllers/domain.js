@@ -33,7 +33,8 @@ const dataArrangement = (data) => {
  * }
  */
 const getDomain = async (req, res) => {
-  const { domain: searchDomain } = req.params;
+  let { domain: searchDomain } = req.params;
+  searchDomain = searchDomain.toLowerCase();
   const resultObj = {};
   const time = performance.now();
   const URL = `https://www.${searchDomain}/ads.txt`;
