@@ -59,7 +59,7 @@ function App() {
   };
   /**
    * @function showTable
-   * Send searchDomain & results to <TableTotal />
+   * Send searchDomain, totalAdvertisers, parseTime, parseErrors and res to <TableTotal />
    * Send sorting functions (sortByNumber,sortByName ) to <TableHead/>
    * Call buildTable() function to build the table
    */
