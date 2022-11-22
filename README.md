@@ -1,7 +1,7 @@
 <h1>Ads.txt Crawler</h1>
 
-<h1>To view the app on Heroku</h1>
-Visit <code>https://adstxt-crawler.herokuapp.com/</code>.
+<h1>To view the app on Heroku:</h1>
+Visit https://adstxt-crawler.herokuapp.com/.
 
 <h1>To get the app running locally:</h1>
 
