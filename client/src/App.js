@@ -1,11 +1,10 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import TableHead from "./components/Table/TableHead";
 import Table from "./components/Table/Table";
 import TableTotal from "./components/Table/TableTotal";
 import myApi from "./api/Api";
 import Spinner from "./components/Spinner/Spinner";
-// TODO: add validation for searchDomain try msn.co!!!!
 import validator from "validator";
 
 function App() {
@@ -17,6 +16,12 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [descending, setDescending] = useState(true);
 
+  /**
+   * @function handleSearch
+   * Cheek that the domain term is valid.
+   * Call GET method for the given domain term.
+   * setState to returned values
+   */
   const handleSearch = async (e) => {
     e.preventDefault();
     if (validator.isURL(searchDomain)) {
@@ -28,6 +33,7 @@ function App() {
         setParseTime(data.parseTime);
         setParseErrors(data.parseErrors);
         setRes(data.data);
+        console.log(data);
       } catch (err) {
         setLoading(false);
         setRes("");
@@ -39,6 +45,10 @@ function App() {
       alert("Invalid URL");
     }
   };
+  /**
+   * @function buildTable
+   * Send domain name & count to <Table />
+   */
   const buildTable = () => {
     return res.map((line, index) => {
       return (
@@ -48,28 +58,12 @@ function App() {
       );
     });
   };
-  const sortByNumber = () => {
-    let newRes;
-    if (descending) {
-      newRes = res.sort((a, b) => a[1] - b[1]);
-      setDescending(false);
-    } else {
-      newRes = res.sort((a, b) => b[1] - a[1]);
-      setDescending(true);
-    }
-    setRes(newRes);
-  };
-  const sortByName = () => {
-    let newRes;
-    if (descending) {
-      newRes = res.sort((a, b) => a[0].localeCompare(b[0]));
-      setDescending(false);
-    } else {
-      newRes = res.sort((a, b) => b[0].localeCompare(a[0]));
-      setDescending(true);
-    }
-    setRes(newRes);
-  };
+  /**
+   * @function showTable
+   * Send searchDomain & results to <TableTotal />
+   * Send sorting functions (sortByNumber,sortByName ) to <TableHead/>
+   * Call buildTable() function to build the table
+   */
   const showTable = () => (
     <div>
       {res ? (
@@ -92,6 +86,36 @@ function App() {
       )}
     </div>
   );
+  /**
+   * @function sortByNumber
+   * When clicking on "Count" the function sort the results by count.
+   */
+  const sortByNumber = () => {
+    let newRes;
+    if (descending) {
+      newRes = res.sort((a, b) => a[1] - b[1]);
+      setDescending(false);
+    } else {
+      newRes = res.sort((a, b) => b[1] - a[1]);
+      setDescending(true);
+    }
+    setRes(newRes);
+  };
+  /**
+   * @function sortByName
+   * When clicking on "Domain" the function sort the results by the domain name.
+   */
+  const sortByName = () => {
+    let newRes;
+    if (descending) {
+      newRes = res.sort((a, b) => a[0].localeCompare(b[0]));
+      setDescending(false);
+    } else {
+      newRes = res.sort((a, b) => b[0].localeCompare(a[0]));
+      setDescending(true);
+    }
+    setRes(newRes);
+  };
 
   return (
     <div className="App">
