@@ -18,9 +18,9 @@ function App() {
 
   /**
    * @function handleSearch
-   * Check that the domain term is valid.
-   * Call the GET method for the given domain term.
-   * setState to returned values
+   * Checks that the domain term is valid.
+   * Calls the GET method for the given domain term.
+   * setState to the returned values
    */
   const handleSearch = async (e) => {
     e.preventDefault();
