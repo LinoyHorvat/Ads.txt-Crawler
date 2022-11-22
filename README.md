@@ -9,4 +9,4 @@ Visit <code>https://adstxt-crawler.herokuapp.com/</code>.
 
 2. Install the node modules <code>npm install</code>.
 
-3. Run the <code>npm start</code>.
+3. Run the app <code>npm run dev</code>.
