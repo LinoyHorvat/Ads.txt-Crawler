@@ -30,7 +30,7 @@ const dataArrangement = (data) => {
  * resultObj{
  *     parseTime: parseTime,
  *     parseErrors: parseErrors,
- *     data: result}
+ *     data: data}
  */
 const getDomain = async (req, res) => {
   let { domain: searchDomain } = req.params;
