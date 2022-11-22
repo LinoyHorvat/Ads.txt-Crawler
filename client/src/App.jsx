@@ -46,7 +46,7 @@ function App() {
   };
   /**
    * @function buildTable
-   * Send domain name & count to <Table />
+   * Sends domain name & count to <Table />
    */
   const buildTable = () => {
     return res.map((line, index) => {
@@ -59,9 +59,9 @@ function App() {
   };
   /**
    * @function showTable
-   * Send searchDomain, totalAdvertisers, parseTime, parseErrors and res to <TableTotal />
-   * Send sorting functions (sortByNumber,sortByName ) to <TableHead/>
-   * Call buildTable() function to build the table
+   * Sends searchDomain, totalAdvertisers, parseTime, parseErrors and res to <TableTotal />
+   * Sends sorting functions (sortByNumber,sortByName ) to <TableHead/>
+   * Calls buildTable() function to build the table
    */
   const showTable = () => (
     <div>
