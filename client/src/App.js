@@ -70,10 +70,10 @@ function App() {
     }
     setRes(newRes);
   };
-  const showTable = () => {
-    return (
-      <div className="table">
-        {res && (
+  const showTable = () => (
+    <div>
+      {res ? (
+        <div className="table">
           <TableTotal
             searchDomain={searchDomain}
             totalAdvertisers={totalAdvertisers}
@@ -81,22 +81,22 @@ function App() {
             parseErrors={parseErrors}
             res={res}
           />
-        )}
-        <br />
-        <div className="main-table">
-          {res && (
+          <br />
+          <div className="main-table">
             <TableHead sortByNumber={sortByNumber} sortByName={sortByName} />
-          )}
-          {res && buildTable()}
+            {buildTable()}
+          </div>
         </div>
-      </div>
-    );
-  };
+      ) : (
+        ""
+      )}
+    </div>
+  );
 
   return (
     <div className="App">
       <h1 className="app-title">Ads.txt Crawler</h1>
-      <form className="search-input">
+      <form className="search-input" onSubmit={handleSearch}>
         <input
           className="input"
           type="text"
@@ -106,11 +106,7 @@ function App() {
           }}
           placeholder="Enter domain name... (e.g. msn.com)"
         />
-        <button
-          className="btn btn-submit"
-          type="submit"
-          onClick={(e) => handleSearch(e)}
-        >
+        <button className="btn btn-submit" type="submit">
           Parse Ads.txt
         </button>
       </form>

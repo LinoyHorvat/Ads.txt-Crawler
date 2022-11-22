@@ -1,14 +1,11 @@
 table {
-  /* min-width: 300px; */
   width: 100%;
   align-items: center;
-  /* border: 0.1px black solid; */
   border-radius: 2px;
 }
 table tr td {
   margin: 5px 2px;
   padding: 10px;
-  width: 400px;
 }
 
 th {
@@ -47,4 +44,14 @@ tr:hover {
 }
 .btn {
   cursor: pointer;
+}
+
+@media screen and (max-width: 650px) {
+  th.table-total {
+    display: block;
+  }
+  .table-total {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
