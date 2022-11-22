@@ -61,7 +61,7 @@ function App() {
    * @function showTable
    * Sends searchDomain, totalAdvertisers, parseTime, parseErrors and res to <TableTotal />
    * Sends sorting functions (sortByNumber,sortByName ) to <TableHead/>
-   * Calls buildTable() function to build the table
+   * Calls buildTable() function to build the table.
    */
   const showTable = () => (
     <div>
@@ -87,7 +87,7 @@ function App() {
   );
   /**
    * @function sortByNumber
-   * When clicking on "Count" the function sort the results by count.
+   * When clicking on "Count" the function sorts the results by count.
    */
   const sortByNumber = () => {
     let newRes;
@@ -102,7 +102,7 @@ function App() {
   };
   /**
    * @function sortByName
-   * When clicking on "Domain" the function sort the results by the domain name.
+   * When clicking on "Domain" the function sorts the results by the domain name.
    */
   const sortByName = () => {
     let newRes;
