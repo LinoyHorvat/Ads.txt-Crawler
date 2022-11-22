@@ -33,7 +33,6 @@ function App() {
         setParseTime(data.parseTime);
         setParseErrors(data.parseErrors);
         setRes(data.data);
-        console.log(data);
       } catch (err) {
         setLoading(false);
         setRes("");
