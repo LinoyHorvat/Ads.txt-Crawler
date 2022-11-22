@@ -5,8 +5,8 @@ const axios = require("axios");
 const { performance } = require("perf_hooks");
 /**
  * @function dataArrangement
- * @param data returned from the the getDomain function
- * @return Array sorted by the the number of times the domain appears
+ * @param data returned from the getDomain function.
+ * @return Array sorted by the number of times the domain appears
  */
 const dataArrangement = (data) => {
   const objOfDomains = {};
@@ -25,7 +25,7 @@ const dataArrangement = (data) => {
 /**
  * @function getDomain
  * @param searchDomain
- * @return The advertiser domains which are on the ads.txt file as following:
+ * @return The advertiser domains which are on the ads.txt file as follows:
  * resultObj{
  *     parseTime: parseTime,
  *     parseErrors: parseErrors,

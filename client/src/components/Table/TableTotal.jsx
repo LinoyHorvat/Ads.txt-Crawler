@@ -14,6 +14,7 @@ function TableTotal({
   const handleSetDownload = () => {
     download ? setDownload(false) : setDownload(true);
   };
+
   return (
     <div>
       <div>
